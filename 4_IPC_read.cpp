@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]) {
   }
 
   // try to open the pipe buffer file
-  if (pipe_fd = open(argv[1],O_READONLY) != -1) {
+  if ((pipe_fd = open(argv[1],O_RDONLY)) != -1) {
     res = read(pipe_fd,buffer,BUFFER_SIZE);
     std::cout << "file contents are: " << buffer <<'\n';
   }
